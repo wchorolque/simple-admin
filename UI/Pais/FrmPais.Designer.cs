@@ -121,11 +121,11 @@
             // 
             // bindingSourcePais
             // 
-            this.bindingSourcePais.DataSource = typeof(Model.PaisViewModel);
+            this.bindingSourcePais.DataSource = typeof(ViewModel.PaisViewModel);
             // 
             // paisViewModelBindingSource
             // 
-            this.paisViewModelBindingSource.DataSource = typeof(Model.PaisViewModel);
+            this.paisViewModelBindingSource.DataSource = typeof(ViewModel.PaisViewModel);
             // 
             // País
             // 

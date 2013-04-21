@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DAL;
 using Model;
+using ViewModel;
 
 namespace UI.Pais
 {
@@ -22,7 +23,7 @@ namespace UI.Pais
             m_presenter = new PaisPresenter(this, dao);
         }
 
-        public void ShowPais(Model.PaisViewModel paisViewModel)
+        public void ShowPais(PaisViewModel paisViewModel)
         {
             bindingSourcePais.DataSource = paisViewModel;
         }

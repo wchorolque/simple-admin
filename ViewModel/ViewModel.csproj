@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E5297062-4403-4AA2-85BF-D16C01BB7144}</ProjectGuid>
+    <ProjectGuid>{3FB8044B-318E-470C-8A90-D1E645D97DB6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UI</RootNamespace>
-    <AssemblyName>UI</AssemblyName>
+    <RootNamespace>ViewModel</RootNamespace>
+    <AssemblyName>ViewModel</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,13 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.4.0.0, Culture=neutral, PublicKeyToken=dc91bbef911870e2, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,47 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pais\FrmPais.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pais\FrmPais.Designer.cs">
-      <DependentUpon>FrmPais.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pais\FrmPaisList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pais\FrmPaisList.Designer.cs">
-      <DependentUpon>FrmPaisList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pais\IPaisListView.cs" />
-    <Compile Include="Pais\IPaisView.cs" />
-    <Compile Include="Pais\PaisPresenter.cs" />
+    <Compile Include="PaisViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pais\FrmPais.resx">
-      <DependentUpon>FrmPais.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pais\FrmPaisList.resx">
-      <DependentUpon>FrmPaisList.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{E2678FFC-929A-4DF0-8F75-DBECDD27DF51}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{3B08DCE3-7952-48A8-9744-E142F2837817}</Project>
       <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
-      <Project>{3FB8044B-318E-470C-8A90-D1E645D97DB6}</Project>
-      <Name>ViewModel</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\DataSources\Model.PaisViewModel.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

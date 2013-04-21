@@ -73,13 +73,13 @@
       <Project>{E2678FFC-929A-4DF0-8F75-DBECDD27DF51}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{3B08DCE3-7952-48A8-9744-E142F2837817}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UI\UI.csproj">
       <Project>{E5297062-4403-4AA2-85BF-D16C01BB7144}</Project>
       <Name>UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
+      <Project>{3FB8044B-318E-470C-8A90-D1E645D97DB6}</Project>
+      <Name>ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

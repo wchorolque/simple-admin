@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Model;
 
-namespace Model
+namespace ViewModel
 {
     public class PaisViewModel
     {
@@ -26,6 +27,5 @@ namespace Model
             m_paisDataEntity = paisDataEntity;
         }
         #endregion
-
     }
 }

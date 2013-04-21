@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DAL;
 using Model;
+using ViewModel;
 
 namespace UI.Pais
 {
