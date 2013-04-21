@@ -1,6 +1,6 @@
 ﻿namespace UI.Pais
 {
-    partial class País
+    partial class FrmPais
     {
         /// <summary>
         /// Required designer variable.
@@ -37,8 +37,10 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.bindingSourcePais = new System.Windows.Forms.BindingSource(this.components);
+            this.paisViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -59,6 +61,7 @@
             // 
             // TxtCodigo
             // 
+            this.TxtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.paisViewModelBindingSource, "Codigo", true));
             this.TxtCodigo.Location = new System.Drawing.Point(86, 22);
             this.TxtCodigo.Mask = ">L>L";
             this.TxtCodigo.Name = "TxtCodigo";
@@ -75,6 +78,7 @@
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -85,11 +89,13 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourcePais, "Descripcion", true));
             this.txtDescripcion.Location = new System.Drawing.Point(86, 58);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(246, 20);
@@ -113,6 +119,14 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
+            // bindingSourcePais
+            // 
+            this.bindingSourcePais.DataSource = typeof(Model.PaisViewModel);
+            // 
+            // paisViewModelBindingSource
+            // 
+            this.paisViewModelBindingSource.DataSource = typeof(Model.PaisViewModel);
+            // 
             // País
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +138,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,5 +153,6 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.MaskedTextBox TxtCodigo;
         private System.Windows.Forms.BindingSource bindingSourcePais;
+        private System.Windows.Forms.BindingSource paisViewModelBindingSource;
     }
 }

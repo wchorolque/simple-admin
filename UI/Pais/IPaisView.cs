@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Model;
 
 namespace UI.Pais
 {
-    interface IPaisView
+    public interface IPaisView
     {
-        // TODO: cambiar object por PaisViewModel
-        void ShowPais(object paisViewModel);
+        void ShowPais(PaisViewModel paisViewModel);
         void ReadUserInput();
         void ShowError(string message);
         void Close();

@@ -6,7 +6,7 @@ using Model;
 
 namespace DAL
 {
-    class PaisDao : IPaisDao
+    public class PaisDao : IPaisDao
     {
         #region Atributos
         private PaisDataMapper m_dataMapper;

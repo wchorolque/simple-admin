@@ -6,7 +6,7 @@ using Model;
 
 namespace DAL
 {
-    interface IPaisDao
+    public interface IPaisDao
     {
         PaisDataEntity crearPaisDataEntity();
         IEnumerable<PaisDataEntity> GetPaises();
