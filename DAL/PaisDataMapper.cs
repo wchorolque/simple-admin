@@ -34,7 +34,10 @@ namespace DAL
         public List<Model.PaisDataEntity> GetPaises()
         {
             List<Model.PaisDataEntity> paisesList = new List<Model.PaisDataEntity>();
-            foreach (PaisDataSet.PaisRow row in m_paisDataSet.Tables["Pais"].Rows)
+            PaisTableAdapter paisTableAdapter = new PaisTableAdapter();
+            PaisDataSet.PaisDataTable paisDataTable = new PaisDataSet.PaisDataTable();
+            paisTableAdapter.Fill(paisDataTable);
+            foreach (PaisDataSet.PaisRow row in paisDataTable.Rows)
             {
                 Model.PaisDataEntity entidad = new Model.PaisDataEntity(row.CODIGO, row.descripcion);
                 paisesList.Add(entidad);
