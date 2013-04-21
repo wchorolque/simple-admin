@@ -7,5 +7,10 @@ namespace UI.Pais
 {
     interface IPaisView
     {
+        // TODO: cambiar object por PaisViewModel
+        void ShowPais(object paisViewModel);
+        void ReadUserInput();
+        void ShowError(string message);
+        void Close();
     }
 }

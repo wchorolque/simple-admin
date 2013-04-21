@@ -57,6 +57,7 @@
     <Compile Include="Pais\FrmPaisList.Designer.cs">
       <DependentUpon>FrmPaisList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pais\IPaisListView.cs" />
     <Compile Include="Pais\IPaisView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,9 +69,7 @@
       <DependentUpon>FrmPaisList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IViews\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

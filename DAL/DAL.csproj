@@ -40,15 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datasets\DataSetPais.cs">
-      <DependentUpon>DataSetPais.xsd</DependentUpon>
+    <Compile Include="Datasets\PaisDataSet.cs">
+      <DependentUpon>PaisDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Datasets\DataSetPais.Designer.cs">
+    <Compile Include="Datasets\PaisDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetPais.xsd</DependentUpon>
+      <DependentUpon>PaisDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PaisDataMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -58,23 +59,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Datasets\DataSetPais.xsc">
-      <DependentUpon>DataSetPais.xsd</DependentUpon>
+    <None Include="Datasets\PaisDataSet.xsc">
+      <DependentUpon>PaisDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Datasets\DataSetPais.xsd">
+    <None Include="Datasets\PaisDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetPais.Designer.cs</LastGenOutput>
+      <LastGenOutput>PaisDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Datasets\DataSetPais.xss">
-      <DependentUpon>DataSetPais.xsd</DependentUpon>
+    <None Include="Datasets\PaisDataSet.xss">
+      <DependentUpon>PaisDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{3B08DCE3-7952-48A8-9744-E142F2837817}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
