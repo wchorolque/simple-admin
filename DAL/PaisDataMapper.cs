@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 using DAL.Datasets;
 using DAL.Datasets.PaisDataSetTableAdapters;
 
@@ -16,17 +15,10 @@ namespace DAL
         private PaisDataSet m_paisDataSet;
         #endregion
 
-        #region Propiedades
-        public string ConnectionString { get; private set; }
-        #endregion
-
         #region Constructores
         public PaisDataMapper()
         {
             m_paisDataSet = new PaisDataSet();
-            ConnectionStringSettingsCollection connections = null;
-            connections = ConfigurationManager.ConnectionStrings;
-            ConnectionString = connections["DAL.Properties.Settings.DefaultConnection"].ConnectionString;
         }
         #endregion
 
@@ -52,17 +44,12 @@ namespace DAL
             {
                 PaisTableAdapter paisTableAdapter = new PaisTableAdapter();
                 int rows = paisTableAdapter.Insert(pais.Codigo, pais.Descripcion);
-                if (0 == rows)
-                {
-                    throw new Exception("No Se pudo Insertar el Registro");
-                }
-
-            } catch(SqlException ex) 
+            } catch(SqlException) 
             {
-                throw ex;
-            } catch (Exception ex)
+                throw;
+            } catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
         #endregion
