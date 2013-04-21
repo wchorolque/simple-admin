@@ -33,7 +33,6 @@ namespace UI.Pais
         #region Metodos
         public void SaveAction()
         {
-            m_view.ReadUserInput();
             PaisDataEntity pais = m_viewModel.PaisDataEntity;
             bool entidadNoExiste = !EsDuplicado(pais);
             if (entidadNoExiste)

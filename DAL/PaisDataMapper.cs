@@ -43,7 +43,7 @@ namespace DAL
             try
             {
                 PaisTableAdapter paisTableAdapter = new PaisTableAdapter();
-                int rows = paisTableAdapter.Insert(pais.Codigo, pais.Descripcion);
+                paisTableAdapter.Insert(pais.Codigo, pais.Descripcion);
             } catch(SqlException) 
             {
                 throw;

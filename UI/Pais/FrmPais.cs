@@ -28,11 +28,6 @@ namespace UI.Pais
             bindingSourcePais.DataSource = paisViewModel;
         }
 
-        public void ReadUserInput()
-        {
-            bindingSourcePais.EndEdit();
-        }
-
         public void ShowError(string message)
         {
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);

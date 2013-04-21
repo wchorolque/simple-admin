@@ -9,7 +9,6 @@ namespace UI.Pais
     public interface IPaisView
     {
         void ShowPais(PaisViewModel paisViewModel);
-        void ReadUserInput();
         void ShowError(string message);
         void Close();
     }
