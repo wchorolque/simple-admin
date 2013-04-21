@@ -114,6 +114,7 @@
             this.tSBtnClose.Name = "tSBtnClose";
             this.tSBtnClose.Size = new System.Drawing.Size(70, 22);
             this.tSBtnClose.Text = "Cerrar";
+            this.tSBtnClose.Click += new System.EventHandler(this.tSBtnClose_Click);
             // 
             // mainPanel
             // 

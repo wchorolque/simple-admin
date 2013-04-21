@@ -9,5 +9,6 @@ namespace UI.Pais
     interface IPaisListView
     {
         void ShowPaises(IEnumerable<PaisViewModel> paisViewModelList);
+        void Close();
     }
 }

@@ -33,5 +33,10 @@ namespace UI.Pais
         {
             m_presenter.AgregarPaisAction();
         }
+
+        private void tSBtnClose_Click(object sender, EventArgs e)
+        {
+            m_presenter.CerrarAction();
+        }
     }
 }

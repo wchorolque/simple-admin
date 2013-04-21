@@ -51,6 +51,11 @@ namespace UI.Pais
             }
             Update();
         }
+
+        public void CerrarAction()
+        {
+            m_view.Close();
+        }
         #endregion
     }
 }
