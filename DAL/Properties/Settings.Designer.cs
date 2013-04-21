@@ -26,10 +26,22 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLExpress2005;Initial Catalog=cesadb;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLExpress2005;Initial Catalog=cesadb;Integrated Security=T" +
+            "rue")]
         public string cesadbConnectionString {
             get {
                 return ((string)(this["cesadbConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLExpress2005;Initial Catalog=cesadb;Integrated Security=T" +
+            "rue")]
+        public string DefaultConnection {
+            get {
+                return ((string)(this["DefaultConnection"]));
             }
         }
     }

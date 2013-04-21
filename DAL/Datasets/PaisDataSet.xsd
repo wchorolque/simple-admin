@@ -2,14 +2,16 @@
 <xs:schema id="PaisDataSet" targetNamespace="http://tempuri.org/PaisDataSet.xsd" xmlns:mstns="http://tempuri.org/PaisDataSet.xsd" xmlns="http://tempuri.org/PaisDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cesadbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cesadbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DAL.Properties.Settings.GlobalReference.Default.cesadbConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cesadbConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="cesadbConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DAL.Properties.Settings.GlobalReference.Default.cesadbConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DefaultConnection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DefaultConnection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DAL.Properties.Settings.GlobalReference.Default.DefaultConnection" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaisTableAdapter" GeneratorDataComponentClassName="PaisTableAdapter" Name="Pais" UserDataComponentName="PaisTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="cesadbConnectionString (Settings)" DbObjectName="cesadb.dbo.Pais" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DefaultConnection (Settings)" DbObjectName="cesadb.dbo.Pais" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Pais] WHERE (([CODIGO] = @Original_CODIGO) AND ([descripcion] = @Original_descripcion))</CommandText>
@@ -53,7 +55,32 @@ SELECT CODIGO, descripcion FROM Pais WHERE (CODIGO = @CODIGO)</CommandText>
               <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
               <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="DefaultConnection (Settings)" DbObjectName="cesadb.dbo.Pais" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCodigo" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCodigo" GeneratorSourceName="FillByCodigo" GetMethodModifier="Public" GetMethodName="GetDataByCodigo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCodigo" UserSourceName="FillByCodigo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     CODIGO, descripcion
+FROM         Pais
+WHERE     (CODIGO = @codigo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="codigo" ColumnName="CODIGO" DataSourceName="cesadb.dbo.Pais" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@codigo" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="CODIGO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DefaultConnection (Settings)" DbObjectName="cesadb.dbo.Pais" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDataByDescripcion" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDescripcion" GeneratorSourceName="FillDataByDescripcion" GetMethodModifier="Public" GetMethodName="GetDataByDescripcion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDescripcion" UserSourceName="FillDataByDescripcion">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT    *
+FROM         Pais
+WHERE     (descripcion = @descripcion)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="descripcion" ColumnName="descripcion" DataSourceName="cesadb.dbo.Pais" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@descripcion" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />

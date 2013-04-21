@@ -35,11 +35,11 @@ namespace UI.Pais
         {
             m_view.ReadUserInput();
             PaisDataEntity pais = m_viewModel.PaisDataEntity;
-            bool entidadExiste = !EsDuplicado(pais);
-            if (entidadExiste)
+            bool entidadNoExiste = !EsDuplicado(pais);
+            if (entidadNoExiste)
             {
                 m_paisDao.Save(pais);
-                m_view.Close();
+                //m_view.Close();
             } else {
                 m_view.ShowError(string.Format("Pais {0} ya existe", m_viewModel.Descripcion));
             }

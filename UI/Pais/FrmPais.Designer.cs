@@ -61,13 +61,13 @@
             // 
             // TxtCodigo
             // 
-            this.TxtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.paisViewModelBindingSource, "Codigo", true));
+            this.TxtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourcePais, "Codigo", true));
             this.TxtCodigo.Location = new System.Drawing.Point(86, 22);
             this.TxtCodigo.Mask = ">L>L";
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.ShortcutsEnabled = false;
             this.TxtCodigo.Size = new System.Drawing.Size(22, 20);
-            this.TxtCodigo.TabIndex = 7;
+            this.TxtCodigo.TabIndex = 1;
             // 
             // btnAceptar
             // 
@@ -75,7 +75,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(176, 98);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 6;
+            this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -86,7 +86,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(257, 98);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -99,7 +99,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(86, 58);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(246, 20);
-            this.txtDescripcion.TabIndex = 3;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // lblDescripcion
             // 
@@ -127,13 +127,13 @@
             // 
             this.paisViewModelBindingSource.DataSource = typeof(ViewModel.PaisViewModel);
             // 
-            // País
+            // FrmPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 132);
             this.Controls.Add(this.groupBox1);
-            this.Name = "País";
+            this.Name = "FrmPais";
             this.Text = "País";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -3,20 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using DAL.Datasets;
+using DAL.Datasets.PaisDataSetTableAdapters;
 
 namespace DAL
 {
     public class PaisDataMapper
     {
-        #region Propiedades
+        #region Atributos
         private PaisDataSet m_paisDataSet;
+        #endregion
+
+        #region Propiedades
+        public string ConnectionString { get; private set; }
         #endregion
 
         #region Constructores
         public PaisDataMapper()
         {
             m_paisDataSet = new PaisDataSet();
+            ConnectionStringSettingsCollection connections = null;
+            connections = ConfigurationManager.ConnectionStrings;
+            ConnectionString = connections["DAL.Properties.Settings.DefaultConnection"].ConnectionString;
         }
         #endregion
 
@@ -35,13 +45,22 @@ namespace DAL
 
         public void Save(Model.PaisDataEntity pais)
         {
-            DataTable paisDataTable = m_paisDataSet.Tables["Pais"];
-            PaisDataSet.PaisRow newRow = (PaisDataSet.PaisRow)paisDataTable.NewRow();
-            newRow.CODIGO = pais.Codigo;
-            newRow.descripcion = pais.Descripcion;
-            paisDataTable.Rows.Add(newRow);
-            paisDataTable.GetChanges();
-            paisDataTable.AcceptChanges();
+            try
+            {
+                PaisTableAdapter paisTableAdapter = new PaisTableAdapter();
+                int rows = paisTableAdapter.Insert(pais.Codigo, pais.Descripcion);
+                if (0 == rows)
+                {
+                    throw new Exception("No Se pudo Insertar el Registro");
+                }
+
+            } catch(SqlException ex) 
+            {
+                throw ex;
+            } catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion
     }
