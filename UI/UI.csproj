@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Pais\IPaisListView.cs" />
     <Compile Include="Pais\IPaisView.cs" />
+    <Compile Include="Pais\PaisListPresenter.cs" />
     <Compile Include="Pais\PaisPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

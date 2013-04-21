@@ -16,7 +16,7 @@ namespace SimpleAdminPais
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DAL.PaisDao dao = new DAL.PaisDao();
-            UI.Pais.FrmPais view = new UI.Pais.FrmPais(dao);
+            UI.Pais.FrmPaisList view = new UI.Pais.FrmPaisList(dao);
             Application.Run(view);
         }
     }

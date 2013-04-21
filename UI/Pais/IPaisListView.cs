@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ViewModel;
 
 namespace UI.Pais
 {
     interface IPaisListView
     {
-        // TODO: Declarar PaisViewModel y cambiarlo por object
-        void ShowPaises(IEnumerable<object> paisViewModelList);
-
+        void ShowPaises(IEnumerable<PaisViewModel> paisViewModelList);
     }
 }

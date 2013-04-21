@@ -49,6 +49,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
+            // bindingSourcePais
+            // 
+            this.bindingSourcePais.DataSource = typeof(ViewModel.PaisViewModel);
+            // 
             // topPanel
             // 
             this.topPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -81,6 +85,7 @@
             this.tSBtnAdd.Name = "tSBtnAdd";
             this.tSBtnAdd.Size = new System.Drawing.Size(70, 22);
             this.tSBtnAdd.Text = "Agregar";
+            this.tSBtnAdd.Click += new System.EventHandler(this.tSBtnAdd_Click);
             // 
             // toolStripSeparator1
             // 
@@ -122,23 +127,28 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCodigo,
             this.ColumnDescripcion});
+            this.dataGridView.DataSource = this.bindingSourcePais;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(494, 192);
             this.dataGridView.TabIndex = 0;
             // 
             // ColumnCodigo
             // 
+            this.ColumnCodigo.DataPropertyName = "Codigo";
             this.ColumnCodigo.HeaderText = "CÓDIGO";
             this.ColumnCodigo.Name = "ColumnCodigo";
             // 
             // ColumnDescripcion
             // 
+            this.ColumnDescripcion.DataPropertyName = "Descripcion";
             this.ColumnDescripcion.HeaderText = "DESCRIPCIÓN";
             this.ColumnDescripcion.Name = "ColumnDescripcion";
             // 
