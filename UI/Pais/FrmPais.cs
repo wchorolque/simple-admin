@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace UI
+namespace UI.Pais
 {
-    public partial class FrmPaisList : Form
+    public partial class País : Form
     {
-        public FrmPaisList()
+        public País()
         {
             InitializeComponent();
         }

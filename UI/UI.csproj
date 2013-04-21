@@ -31,8 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.4.0.0, Culture=neutral, PublicKeyToken=dc91bbef911870e2, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -42,27 +45,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmPais.cs">
+    <Compile Include="Pais\FrmPais.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPais.Designer.cs">
+    <Compile Include="Pais\FrmPais.Designer.cs">
       <DependentUpon>FrmPais.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPaisList.cs">
+    <Compile Include="Pais\FrmPaisList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPaisList.Designer.cs">
+    <Compile Include="Pais\FrmPaisList.Designer.cs">
       <DependentUpon>FrmPaisList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pais\IPaisView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmPais.resx">
+    <EmbeddedResource Include="Pais\FrmPais.resx">
       <DependentUpon>FrmPais.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPaisList.resx">
+    <EmbeddedResource Include="Pais\FrmPaisList.resx">
       <DependentUpon>FrmPaisList.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IViews\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
